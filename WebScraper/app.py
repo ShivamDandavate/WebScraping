@@ -3,7 +3,8 @@ import pandas as pd
 from ScrapingFunction import Scraper as sp
 import tqdm
 import logging
-import streamlit as st
+
+
 
 logging.basicConfig(filename='logger.log',filemode="w",level=logging.INFO,format='%(asctime)s -- %(levelname)s : %(message)s')
 
@@ -30,6 +31,5 @@ def main():
             final_df = pd.concat([final_df,df1,df2,df3], ignore_index=True)
     final_df.to_csv('news.csv',index=False)
     
-    st.dataframe(final_df)
 if __name__ == '__main__':
     main()
